@@ -15,6 +15,9 @@ public class Homework3 {
         // ints used to store randomly generated values
         int CPUCycles;
         int sizeOfMemoryFootprint;
+        //
+        double value1;
+        double value2;
         //variables used to print the table
         int CPUInt=0;
         int memFootprintInt=0;
@@ -44,8 +47,10 @@ public class Homework3 {
 
                 else if(y==1){
                     //generates CPU Cycle data using random generator
-                    CPUCycles = (int) ((random.nextGaussian() * 3000) + 6000);
-                    CPUCycles = (CPUCycles % (11000-1000) +1000);
+
+                    value1 = random.nextGaussian() * 3000 + 6000;
+                    CPUCycles = (int)Math.round(value1);
+                    CPUCycles = (CPUCycles % (11000-1000)) + 1000;
                     processRepresentation[x][y]=CPUCycles;
                     CPUInt = processRepresentation[x][y];
 
@@ -53,8 +58,9 @@ public class Homework3 {
 
                 else {
                     //generates memory footprint data using random generator
-                    sizeOfMemoryFootprint = (int) ((random.nextGaussian() * 50) + 20);
-                    sizeOfMemoryFootprint = (sizeOfMemoryFootprint % (100-1) + 1);
+                    value2 = random.nextGaussian() * 50 + 20;
+                    sizeOfMemoryFootprint = (int)Math.round(value2);
+                    sizeOfMemoryFootprint = (sizeOfMemoryFootprint % (100-1)) + 1;
                     processRepresentation[x][y]= sizeOfMemoryFootprint;
                     memFootprintInt=processRepresentation[x][y];
 
